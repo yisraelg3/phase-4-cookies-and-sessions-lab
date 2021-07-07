@@ -56,7 +56,9 @@ RSpec.describe "Articles", type: :request do
     context 'with three pageviews' do
       it 'returns an error message' do
         get "/articles/#{Article.first.id}"
+        # byebug
         get "/articles/#{Article.first.id}"
+        # byebug
         get "/articles/#{Article.first.id}"
 
         expect(response.body).to include_json({ 
